@@ -2,12 +2,13 @@
 
 Developed a decentralized voting application (DApp) on the Ethereum blockchain to enable secure and transparent elections. The application allows users to connect their MetaMask wallet, vote for candidates, and view results in real time. Key features include:
 
-Smart Contract: Written in Solidity to manage election logic, including starting and ending elections, adding/removing candidates, and ensuring secure voting with access control.
-Frontend: Built with HTML, JavaScript (Ethers.js), and styled with TailwindCSS, providing an intuitive interface for both voters and admins.
-Admin Controls: Admins can manage candidates, start/end elections, and view voting results.
-Blockchain Integration: Utilized Ethers.js to interact with the Ethereum blockchain for wallet connection, voting transactions, and state changes.
-MetaMask Integration: Users can connect their MetaMask wallet for secure and anonymous voting.
-
+<ul>
+<li><b>Smart Contract</b>: Written in Solidity to manage election logic, including starting and ending elections, adding/removing candidates, and ensuring secure voting with access control.</li>
+<li><b>Frontend</b>: Built with HTML, JavaScript (Ethers.js), and styled with TailwindCSS, providing an intuitive interface for both voters and admins.</li>
+<li><b>Admin Controls</b>: Admins can manage candidates, start/end elections, and view voting results.</li>
+<li><b>Blockchain Integration</b>: Utilized Ethers.js to interact with the Ethereum blockchain for wallet connection, voting transactions, and state changes.</li>
+<li><b>MetaMask Integration</b>: Users can connect their MetaMask wallet for secure and anonymous voting.</li>
+</ul>
 This is a url with no SSL, i created this url for my IOT project
 Website URL : http://watertank.mooo.com/Voting/
 
