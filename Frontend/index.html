@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting DApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.9/dist/ethers.umd.min.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-6">Decentralized Voting System</h1>
+
+        <div id="connectMetamask" class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <p id="connectWalletMessage" class="text-center">Please connect your MetaMask wallet to vote</p>
+            <button id="connectWallet" class="w-full mt-2 bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Connect Wallet</button>
+        </div>
+
+        <div id="votingStation" class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <button id="refreshBtn" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Refresh</button><br>
+
+            <div id="timer" class="text-center mb-4">
+                <!-- <p id="timerMessage" class="text-lg">
+                    <span id="time" class="font-bold">123</span> seconds left
+                </p> -->
+            </div>
+            <div id="mainBoard">
+                <table id="candidateBoard" class="min-w-full border border-gray-300 text-left">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border px-4 py-2">ID</th>
+                            <th class="border px-4 py-2">Candidate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="voteForm" class="bg-white p-4 rounded-lg shadow-md mb-6">
+           
+
+            <p class="mb-2">Please select the ID of the candidate you would like to vote for:</p>
+
+            <div class="flex items-center">
+                <input type="number" id="vote" class="border border-gray-300 rounded p-2 mr-2" placeholder="Candidate ID">
+                <button id="sendVote" class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700">Vote</button>
+            </div>
+
+            
+        </div>
+
+        <div id="result" class="bg-white p-4 rounded-lg shadow-md mt-4 mb-6">
+            <div id="showResultContainer" class="mt-4">
+                <button id="showResult" class="bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600">Show Result</button>
+            </div>
+            <div id="result" class="mt-4">
+                <table id="resultBoard" class="min-w-full border border-gray-300 text-left">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border px-4 py-2">ID</th>
+                            <th class="border px-4 py-2">Candidate</th>
+                            <th class="border px-4 py-2">No of Votes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="admin" class="bg-white p-4 rounded-lg shadow-md mb-6 hidden">
+            <h2 class="text-lg font-bold mb-2">Admin Only</h2>
+            <div id="tools">
+                <div id="startElection" class="mb-4">
+                    <p class="mb-2">Start Election</p>
+                    <input type="text" id="candidates" placeholder="CSV of candidate names" class="border border-gray-300 rounded p-2 mb-2 w-full">
+                    <button id="startAnElection" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 w-full">Start Election</button>
+                </div>
+                <div id="addCandidate">
+                    <p class="mb-2">Add a Candidate</p>
+                    <input type="text" id="candidate" placeholder="Candidate Name" class="border border-gray-300 rounded p-2 mb-2 w-full">
+                    <button id="addTheCandidate" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 w-full">Add Candidate</button>
+                </div>
+
+                <button id="endElection" class="mt-4 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 w-full">End Election</button>
+            </div>
+
+            <div id="adminActions" class="p-4 bg-gray-100 rounded-md shadow-md">
+                <input 
+                    type="number" 
+                    id="candidateIdToRemove" 
+                    placeholder="Enter Candidate ID" 
+                    class="p-2 border border-gray-300 rounded-md mb-4 w-full"
+                />
+                <div class="flex space-x-2">
+                    <button 
+                        id="removeCandidate" 
+                        class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition"
+                    >
+                        Remove Candidate
+                    </button>
+                    <button 
+                        id="removeAllCandidates" 
+                        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+                    >
+                        Remove All Candidates
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+   
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
